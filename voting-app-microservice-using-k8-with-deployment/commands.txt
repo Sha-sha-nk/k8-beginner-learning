@@ -1,26 +1,26 @@
-kubectl create -f voting-app-pod.yaml
+kubectl create -f voting-app-deploy.yaml
 
 kubectl create -f voting-app-service.yaml
 
-kubectl get pods,svc 
+kubectl get deployment,svc 
 
 minicube service voting-service --url
 
-kubectl create -f redis-pod.yaml
+kubectl create -f redis-deploy.yaml
 
 kubectl create -f redis-service.yaml
 ## will be clusterIP type as internal
 
-kubectl create -f postgres-pod.yaml
+kubectl create -f postgres-deploy.yaml
 
 kubectl create -f postgres-service.yaml
 ## will be clusterIP type as internal
 
-kubectl create -f worker-app-pod.yaml
+kubectl create -f worker-app-deploy.yaml
 # no service creation required
 # as no pod/service accessing this pod
 
-kubectl create -f result-app-pod.yaml
+kubectl create -f result-app-deploy.yaml
 
 kubectl create -f result-app-service.yaml
 

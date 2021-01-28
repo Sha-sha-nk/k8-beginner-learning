@@ -36,5 +36,8 @@ node port range : 30000-32767
 
 
 clusterip: virtual ip inside cluster to enable communitation b/w diff services
+
 load balancer: 
+gcp: nativeload balancer and change service type: LoadBalancer
+
 
