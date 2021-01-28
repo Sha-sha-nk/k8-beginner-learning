@@ -1,0 +1,40 @@
+kubectl create -f deployment-definition.yml --record (this record: will keep a track of cause of change)
+
+
+kubectl get deployments
+
+kubectl get replicaset
+
+kubectl get pods 
+
+kubectl describe replicaset <name>
+
+kubectl get all 
+# gives pods,deployment,replicaset
+
+kubectl rollout status deployment/<name>
+
+kubectl rollout history deployment/<name>
+
+
+recreate: first scale down replicaset to 0 then to desired value
+
+rollingUpdate: old will be scaled down one at time ,simultaneously new will be scaled up
+
+upgrades: create new replicaset ,scale down old replicaset and scales up new replicaset
+if new rollout is faulty,you wish to rollback
+kubectl rollout undo deployment/<name>
+
+networking:
+in k8 ip is assigned to pod
+
+services:
+------------------
+nodeport service : link internal port to node 's port
+node port linked to service, then service port linked to pod port
+node port range : 30000-32767
+
+
+clusterip: virtual ip inside cluster to enable communitation b/w diff services
+load balancer: 
+
